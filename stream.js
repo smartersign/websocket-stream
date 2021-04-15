@@ -41,7 +41,7 @@ function WebSocketStream(target, protocols, options) {
     options.objectMode = !(options.binary === true || options.binary === undefined)
   }
 
-  var proxy = buildProxy(options, socketWrite, socketEnd)
+  var proxy = buildProxy(options, socketWriteBrowser, socketEnd)
 
   if (!options.objectMode) {
     proxy._writev = writev
