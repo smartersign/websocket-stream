@@ -41,6 +41,7 @@ function WebSocketStream(target, protocols, options) {
     options.objectMode = !(options.binary === true || options.binary === undefined)
   }
 
+  // modification to force browser
   var proxy = buildProxy(options, socketWriteBrowser, socketEnd)
 
   if (!options.objectMode) {
